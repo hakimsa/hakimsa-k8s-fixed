@@ -15,6 +15,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/hakimsa/hakimsa-k8s-fixed.git
+    targetRevision: main
     path: deploy-front/prod
   destination:
     server: https://kubernetes.default.svc
