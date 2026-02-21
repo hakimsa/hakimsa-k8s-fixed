@@ -4,4 +4,4 @@ namespace: dev
 nameSuffix: -dev
 images:
   - name: hakimsamouh/flutter-web
-    newTag: dev-1.0.0-eb4df97
+    newTag: dev-1.0.0-d323aba
