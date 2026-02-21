@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flutter-web
+spec:
+  selector:
+    app: flutter-web
+  ports:
+    - port: 80
+      targetPort: 80
+  type: ClusterIP

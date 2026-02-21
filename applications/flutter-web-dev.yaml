@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: flutter-web-dev
+  namespace: argocd
+  annotations:
+    # Configuración del image updater
+    argocd-image-updater.argoproj.io/image-list: flutter-web=hakimsamouh/flutter-web
+    argocd-image-updater.argoproj.io/flutter-web.allow-tags: regexp:^dev-.*
+    argocd-image-updater.argoproj.io/flutter-web.update-strategy: newest-build
+    argocd-image-updater.argoproj.io/flutter-web.kustomize.image-name: hakimsamouh/flutter-web
+    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/git-creds
+    argocd-image-updater.argoproj.io/git-branch: develop
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/hakimsa/testa.git
+    targetRevision: develop
+    path: deploy-front/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
