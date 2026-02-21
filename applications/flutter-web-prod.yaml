@@ -14,8 +14,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/hakimsa/testa.git
-    targetRevision: main
+    repoURL: https://github.com/hakimsa/hakimsa-k8s-fixed.git
     path: deploy-front/prod
   destination:
     server: https://kubernetes.default.svc

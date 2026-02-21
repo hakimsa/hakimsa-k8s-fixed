@@ -14,7 +14,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/hakimsa/testa.git
+    repoURL: https://github.com/hakimsa/hakimsa-k8s-fixed.git
     targetRevision: develop
     path: deploy-front/dev
   destination:
