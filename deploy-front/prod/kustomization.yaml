@@ -4,4 +4,4 @@ namespace: prod
 nameSuffix: -prod
 images:
   - name: hakimsamouh/flutter-web
-    newTag: prod-1.0.3-a1b7ca0
+    newTag: prod-1.0.3-5c35af7
