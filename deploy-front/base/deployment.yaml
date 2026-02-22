@@ -15,6 +15,7 @@ spec:
       containers:
         - name: flutter-web
           image: hakimsamouh/flutter-web:prod-1.0.3-989075f
+          imagePullPolicy: Always   # 👈 fuerza que siempre se descargue la imagen
           ports:
             - containerPort: 80
           readinessProbe:
