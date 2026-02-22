@@ -4,17 +4,20 @@ metadata:
   name: flutter-web-updater-prod
   namespace: argocd
 spec:
-  namespace: argocd
+  namespace: argocd   # 👈 OBLIGATORIO
+
   applicationRefs:
     - namePattern: flutter-web-prod
-      useAnnotations: false
       images:
-        - alias: flutter-web-image-prod
+        - alias: flutter-web
           imageName: hakimsamouh/flutter-web
           manifestTargets:
             kustomize:
               name: hakimsamouh/flutter-web
+
   commonUpdateSettings:
-    updateStrategy: newest-build
+    updateStrategy: alphabetical
+    allowTags: regexp:^prod-.*
+
   writeBackConfig:
     method: argocd
