@@ -1,0 +1,7 @@
+resources:
+  - ../base
+namespace: prod
+nameSuffix: -prod
+images:
+  - name: hakimsamouh/api-server
+    newTag: prod-1.0.0-eb4df97
