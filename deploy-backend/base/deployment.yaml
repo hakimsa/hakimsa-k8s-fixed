@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flutter-web
+  name: api-server
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: flutter-web
+      app: api-server
   template:
     metadata:
       labels:
-        app: flutter-web
+            app: api-server
     spec:
       containers:
-        - name: flutter-web
-          image: hakimsamouh/flutter-web:prod-1.0.3-989075f
+        - name: api-server
+          image: hakimsamouh/api-server:prod-1.0.3-989075f
           imagePullPolicy: Always
           ports:
             - containerPort: 80
