@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-            app: api-server
+        app: api-server
     spec:
       containers:
         - name: api-server
@@ -24,5 +24,12 @@ spec:
               port: 80
             initialDelaySeconds: 10
             periodSeconds: 5
+          env:
+            - name: DB_URL
+              value: "jdbc:postgresql://172.19.0.2:5432/em_db"
+            - name: DB_USER
+              value: "hakim"
+            - name: DB_PASSWORD
+              value: "zoro123"
       imagePullSecrets:
         - name: dockerhub-credi
